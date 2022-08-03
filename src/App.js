@@ -1,5 +1,29 @@
+import Logo from "./assets/logo.png";
+import { PageIndicator } from "./components";
+import { useState } from "react";
+import { UserInfo, Workspace, Usage, Congrats } from "./pages";
+
 function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const pages = [<UserInfo />, <Workspace />, <Usage />, <Congrats />];
+
+  return (
+    <div className="container mx-auto w-1/2 flex flex-col items-center">
+      <div className="flex items-center mt-16">
+        <div>
+          <img src={Logo} alt="logo" />
+        </div>
+        <h1 className="text-heading font-bold">Eden</h1>
+      </div>
+      <PageIndicator
+        currentPage={currentPage}
+        pages={pages.length}
+        otherClasses=""
+      />
+      {pages[currentPage]}
+    </div>
+  );
 }
 
 export default App;
