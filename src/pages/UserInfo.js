@@ -14,7 +14,9 @@ export const UserInfo = ({ setCurrentPage, userDetails, setUserDetails }) => {
           setCurrentPage((currPage) => currPage + 1);
         }}
       >
-        <label className="mb-2 text-sm">Full Name</label>
+        <label className="mb-2 text-sm font-bold text-slate-700">
+          Full Name
+        </label>
         <Input
           placeholder="Steve Jobs"
           type="text"
@@ -25,7 +27,9 @@ export const UserInfo = ({ setCurrentPage, userDetails, setUserDetails }) => {
             setUserDetails({ ...userDetails, fullName: e.target.value })
           }
         />
-        <label className="mt-4 mb-2  text-sm">Display Name</label>
+        <label className="mt-4 mb-2  text-sm font-bold text-slate-700">
+          Display Name
+        </label>
         <Input
           placeholder="Steve"
           type="text"

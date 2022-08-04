@@ -16,7 +16,9 @@ export const Workspace = ({ setCurrentPage, userDetails, setUserDetails }) => {
           setCurrentPage((currPage) => currPage + 1);
         }}
       >
-        <label className="mb-2 text-sm">Workspace Name</label>
+        <label className="mb-2 text-sm font-bold text-slate-700">
+          Workspace Name
+        </label>
         <Input
           placeholder="Eden"
           type="text"
@@ -27,7 +29,7 @@ export const Workspace = ({ setCurrentPage, userDetails, setUserDetails }) => {
             setUserDetails({ ...userDetails, workspaceName: e.target.value })
           }
         />
-        <label className="mt-4 mb-2  text-sm">
+        <label className="mt-4 mb-2  text-sm font-bold text-slate-700">
           Workspace URL <span className="text-slate-400">(optional)</span>
         </label>
         <Input
