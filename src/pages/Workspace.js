@@ -1,9 +1,6 @@
-import { useState } from "react";
 import { ButtonPrimary, Input } from "../components";
 
-export const Workspace = ({ setCurrentPage }) => {
-  const [workspaceName, setWorkspaceName] = useState("");
-  const [workspaceUrl, setWorkspaceUrl] = useState("");
+export const Workspace = ({ setCurrentPage, userDetails, setUserDetails }) => {
   return (
     <main className="mt-16 flex flex-col items-center w-full">
       <h1 className=" text-3xl font-bold mb-4">
@@ -19,26 +16,28 @@ export const Workspace = ({ setCurrentPage }) => {
           setCurrentPage((currPage) => currPage + 1);
         }}
       >
-        <label for="" className="mb-2 text-sm">
-          Workspace Name
-        </label>
+        <label className="mb-2 text-sm">Workspace Name</label>
         <Input
           placeholder="Eden"
           type="text"
           otherClasses=" text-sm"
-          text={workspaceName}
+          text={userDetails.workspaceName}
           required={true}
-          onChangeHandler={(e) => setWorkspaceName(e.target.value)}
+          onChangeHandler={(e) =>
+            setUserDetails({ ...userDetails, workspaceName: e.target.value })
+          }
         />
-        <label for="" className="mt-4 mb-2  text-sm">
+        <label className="mt-4 mb-2  text-sm">
           Workspace URL <span className="text-slate-400">(optional)</span>
         </label>
         <Input
           placeholder="www.eden.com/    Example"
           type="email"
           otherClasses=" text-sm"
-          text={workspaceUrl}
-          onChangeHandler={(e) => setWorkspaceUrl(e.target.value)}
+          text={userDetails.workspaceUrl}
+          onChangeHandler={(e) =>
+            setUserDetails({ ...userDetails, workspaceUrl: e.target.value })
+          }
         />
         <ButtonPrimary text="Create Workspace" otherClasses="mt-6 text-sm" />
       </form>

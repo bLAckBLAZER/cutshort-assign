@@ -6,11 +6,31 @@ import { UserInfo, Workspace, Usage, Congrats } from "./pages";
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
 
+  const [userDetails, setUserDetails] = useState({
+    fullName: "",
+    displayName: "",
+    workspaceName: "",
+    workspaceUrl: "",
+    usageType: "individual",
+  });
+
   const pages = [
-    <UserInfo setCurrentPage={setCurrentPage} />,
-    <Workspace setCurrentPage={setCurrentPage} />,
-    <Usage setCurrentPage={setCurrentPage} />,
-    <Congrats setCurrentPage={setCurrentPage} />,
+    <UserInfo
+      setCurrentPage={setCurrentPage}
+      userDetails={userDetails}
+      setUserDetails={setUserDetails}
+    />,
+    <Workspace
+      setCurrentPage={setCurrentPage}
+      userDetails={userDetails}
+      setUserDetails={setUserDetails}
+    />,
+    <Usage
+      setCurrentPage={setCurrentPage}
+      userDetails={userDetails}
+      setUserDetails={setUserDetails}
+    />,
+    <Congrats userDetails={userDetails} />,
   ];
 
   return (

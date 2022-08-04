@@ -1,18 +1,15 @@
-import { useState } from "react";
 import { ButtonPrimary, Input } from "../components";
 import IndividualLogo from "../assets/individual.png";
 import GroupLogo from "../assets/group.png";
 
-export const Usage = ({ setCurrentPage }) => {
-  const [usageType, setUsageType] = useState("individual");
-
+export const Usage = ({ setCurrentPage, userDetails, setUserDetails }) => {
   return (
     <main className="mt-16 flex flex-col items-center w-full">
       <h1 className=" text-3xl font-bold mb-4">
         How are you planning to use Eden?
       </h1>
       <p className="text-slate-400">
-        We'll stremline your setup experience accordingly.
+        We'll streamline your setup experience accordingly.
       </p>
       <form
         className="flex flex-col w-1/2 mt-8"
@@ -24,9 +21,11 @@ export const Usage = ({ setCurrentPage }) => {
         <div className="flex gap-8">
           <div
             className={`flex flex-col p-4 border rounded-md flex-1 cursor-pointer ${
-              usageType === "individual" ? "border-primary" : ""
+              userDetails.usageType === "individual" ? "border-primary" : ""
             }`}
-            onClick={() => setUsageType("individual")}
+            onClick={() =>
+              setUserDetails({ ...userDetails, usageType: "individual" })
+            }
           >
             <div>
               <img src={IndividualLogo} alt="" className="mb-2" />
@@ -38,9 +37,11 @@ export const Usage = ({ setCurrentPage }) => {
           </div>
           <div
             className={`flex flex-col p-4 border rounded-md flex-1 cursor-pointer ${
-              usageType === "group" ? "border-primary" : ""
+              userDetails.usageType === "group" ? "border-primary" : ""
             }`}
-            onClick={() => setUsageType("group")}
+            onClick={() =>
+              setUserDetails({ ...userDetails, usageType: "group" })
+            }
           >
             <div>
               <img src={GroupLogo} alt="" className="mb-2" />
