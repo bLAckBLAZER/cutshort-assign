@@ -19,7 +19,7 @@ export const PageIndicator = ({ currentPage = 0, pages }) => {
   }
 
   return (
-    <div className="relative flex w-2/5 mt-16">
+    <div className="relative flex w-2/5 mt-16 sm:w-full">
       <div className=" w-full bg-slate-300 h-[1px] absolute top-1/2">
         <div
           className=" bg-primary h-[1px]"

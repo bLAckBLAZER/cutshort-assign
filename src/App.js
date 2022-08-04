@@ -34,7 +34,7 @@ function App() {
   ];
 
   return (
-    <div className="container mx-auto w-1/2 flex flex-col items-center">
+    <div className="container mx-auto w-1/2 flex flex-col items-center md:w-full ">
       <div className="flex items-center mt-16">
         <div>
           <img src={Logo} alt="logo" />

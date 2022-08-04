@@ -7,8 +7,8 @@ export const Congrats = ({ userDetails }) => {
       <div>
         <img src={CompleteLogo} alt="" className="mb-8" />
       </div>
-      <h1 className=" text-3xl font-bold mb-4">{`Congratulations, ${userDetails.displayName}!`}</h1>
-      <p className="text-slate-400">
+      <h1 className=" text-3xl font-bold mb-4 sm:text-center">{`Congratulations, ${userDetails.displayName}!`}</h1>
+      <p className="text-slate-400 sm:text-center">
         You have completed onboarding, you can start using the Eden!
       </p>
 

@@ -3,12 +3,14 @@ import { ButtonPrimary, Input } from "../components";
 export const UserInfo = ({ setCurrentPage, userDetails, setUserDetails }) => {
   return (
     <main className="mt-16 flex flex-col items-center w-full">
-      <h1 className=" text-3xl font-bold mb-4">
+      <h1 className=" text-3xl font-bold mb-4 sm:text-center">
         Welcome! First things first...
       </h1>
-      <p className="text-slate-400">You can always change them later.</p>
+      <p className="text-slate-400  sm:text-center">
+        You can always change them later.
+      </p>
       <form
-        className="flex flex-col w-1/2 mt-8"
+        className="flex flex-col w-1/2 mt-8 sm:w-full sm:px-4"
         onSubmit={(e) => {
           e.preventDefault();
           setCurrentPage((currPage) => currPage + 1);
