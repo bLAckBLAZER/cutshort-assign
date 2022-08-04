@@ -4,7 +4,7 @@ export const Input = ({
   placeholder,
   onChangeHandler,
   otherClasses,
-  required,
+  required = false,
 }) => {
   return (
     <input
