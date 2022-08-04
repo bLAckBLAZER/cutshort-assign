@@ -6,7 +6,12 @@ import { UserInfo, Workspace, Usage, Congrats } from "./pages";
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
 
-  const pages = [<UserInfo />, <Workspace />, <Usage />, <Congrats />];
+  const pages = [
+    <UserInfo setCurrentPage={setCurrentPage} />,
+    <Workspace setCurrentPage={setCurrentPage} />,
+    <Usage setCurrentPage={setCurrentPage} />,
+    <Congrats setCurrentPage={setCurrentPage} />,
+  ];
 
   return (
     <div className="container mx-auto w-1/2 flex flex-col items-center">
