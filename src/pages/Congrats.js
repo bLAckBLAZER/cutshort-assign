@@ -1,4 +1,4 @@
-import { ButtonPrimary, Input } from "../components";
+import { ButtonPrimary } from "../components";
 import CompleteLogo from "../assets/complete.png";
 
 export const Congrats = ({ userDetails }) => {

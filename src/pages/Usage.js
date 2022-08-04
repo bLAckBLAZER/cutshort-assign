@@ -1,4 +1,4 @@
-import { ButtonPrimary, Input } from "../components";
+import { ButtonPrimary } from "../components";
 import IndividualLogo from "../assets/individual.png";
 import GroupLogo from "../assets/group.png";
 
